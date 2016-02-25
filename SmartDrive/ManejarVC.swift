@@ -12,6 +12,11 @@ import iAd
 class ManejarVC: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var botonManejar: UIButton!
+    @IBOutlet weak var labelEstado: UILabel!
+    @IBOutlet var vistaBackground: UIView!
+    
+    var manejando = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,25 @@ class ManejarVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func presionarBotonManejar(sender: AnyObject) {
+        if manejando {
+            labelEstado.text = "Empezar a manejar"
+            vistaBackground.backgroundColor = UIColor.whiteColor()
+            menuButton.enabled = true
+            manejando = !manejando
+            self.revealViewController().panGestureRecognizer().enabled = true
+        } else {
+            labelEstado.text = "Manejando"
+            vistaBackground.backgroundColor = UIColor.grayColor()
+            manejando = !manejando
+            menuButton.enabled = false
+            self.revealViewController().panGestureRecognizer().enabled = false
+        }
+        
+        
+    }
+    
     
 
     /*

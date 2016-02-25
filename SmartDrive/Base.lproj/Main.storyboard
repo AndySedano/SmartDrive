@@ -285,18 +285,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-yI-akT">
-                                <rect key="frame" x="128" y="252" width="64" height="64"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-yI-akT">
+                                <rect key="frame" x="96" y="220" width="128" height="128"/>
                                 <state key="normal" image="BotonManejar"/>
+                                <connections>
+                                    <action selector="presionarBotonManejar:" destination="faO-W5-JN4" eventType="touchUpInside" id="Gel-5d-f1W"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empezar a Manejar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXI-Nf-EGM">
+                                <rect key="frame" x="87" y="356" width="146.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nVe-yI-akT" firstAttribute="centerY" secondItem="lmD-CN-0f1" secondAttribute="centerY" id="0Xd-qB-Nbd"/>
+                            <constraint firstItem="iXI-Nf-EGM" firstAttribute="centerX" secondItem="lmD-CN-0f1" secondAttribute="centerX" id="1cM-L2-oJs"/>
+                            <constraint firstItem="nVe-yI-akT" firstAttribute="centerX" secondItem="lmD-CN-0f1" secondAttribute="centerX" id="JNe-W4-dbA"/>
+                            <constraint firstItem="iXI-Nf-EGM" firstAttribute="top" secondItem="nVe-yI-akT" secondAttribute="bottom" constant="8" id="OoC-0g-eIG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SmartDrive" id="ErY-Uz-tCU">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="2Ch-RB-7bc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="botonManejar" destination="nVe-yI-akT" id="HmV-M5-bWH"/>
+                        <outlet property="labelEstado" destination="iXI-Nf-EGM" id="Sle-09-kcY"/>
                         <outlet property="menuButton" destination="2Ch-RB-7bc" id="Wgg-u4-lJi"/>
+                        <outlet property="vistaBackground" destination="lmD-CN-0f1" id="4rs-i5-9Vu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ya1-t8-kP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -513,7 +531,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BotonManejar" width="64" height="64"/>
+        <image name="BotonManejar" width="128" height="128"/>
         <image name="Carro" width="48" height="48"/>
         <image name="Logout" width="50" height="50"/>
         <image name="Mapa" width="50" height="50"/>
